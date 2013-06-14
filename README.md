@@ -3,7 +3,7 @@ config-leaf
 
 [![Build Status](https://travis-ci.org/jed/config-leaf.png?branch=master)](https://travis-ci.org/jed/config-leaf) (tests work on my end, but not on travis... WHY?)
 
-config-leaf helps you hide your sensitive node.js bits in plain sight. It was based on [John Resig](https://github.com/jeresig)'s post, [Keeping Passwords in Source Control](http://ejohn.org/blog/keeping-passwords-in-source-control/).
+config-leaf helps you hide your sensitive node.js bits in plain sight. It is based on [John Resig](https://github.com/jeresig)'s post, [Keeping Passwords in Source Control](http://ejohn.org/blog/keeping-passwords-in-source-control/).
 
 The idea is that the configuration of deployed apps can be managed in version control for transparency and ease of rollback. But, since configuration often contains sensitive information like passwords, it shouldn't be kept in plaintext. This is where config-leaf comes in, by letting you encrypt your config in development, check it in, and then decrypt it in production or other dev environments.
 
@@ -12,11 +12,11 @@ Installation and configuration
 
 Let's say that we have a node.js project with some sensitive configuration information, kept in a file called `config.json`.
 
-First, install this library as a dependency in project:
+First, install this library as a dependency of the project:
 
     npm install config-leaf --save
 
-Then, make sure that you add this sensitive file to your `.gitignore` (or appropriate ignore file depending on your version control system) to make sure it never gets checked in:
+Then, make sure that you add this file to `.gitignore` (or appropriate ignore file depending on your version control system) to make sure it never gets checked in:
 
     echo config.json >> .gitignore
 
