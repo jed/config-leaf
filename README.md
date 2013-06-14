@@ -1,7 +1,7 @@
 config-leaf
 ===========
 
-[![Build Status](https://travis-ci.org/jed/config-leaf.png?branch=master)](https://travis-ci.org/jed/config-leaf) (tests work on my end, but not on travis... WHY?)
+<!--[![Build Status](https://travis-ci.org/jed/config-leaf.png?branch=master)](https://travis-ci.org/jed/config-leaf) (tests work on my end, but not on travis... WHY?) -->
 
 config-leaf helps you hide your sensitive node.js bits in plain sight. It is based on [John Resig](https://github.com/jeresig)'s post, [Keeping Passwords in Source Control](http://ejohn.org/blog/keeping-passwords-in-source-control/).
 
