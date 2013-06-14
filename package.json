@@ -8,7 +8,7 @@
     "url": "https://github.com/jed/config-leaf.git"
   },
   "author": "Jed Schmidt <where@jed.is>",
-  "license": "BSD",
+  "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "e906d66eb6132cd515d9d77fdae699bdb644e58b",
   "bugs": {
