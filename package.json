@@ -1,0 +1,26 @@
+{
+  "name": "config-leaf",
+  "version": "0.0.1",
+  "description": "Hide your sensitive node.js bits in plain sight.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jed/config-leaf.git"
+  },
+  "author": "Jed Schmidt <where@jed.is>",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "e906d66eb6132cd515d9d77fdae699bdb644e58b",
+  "bugs": {
+    "url": "https://github.com/jed/config-leaf/issues"
+  },
+  "scripts": {
+    "test": "sh test.sh",
+    "encrypt": "encrypt config.js config.js.cast5",
+    "decrypt": "decrypt config.js.cast5 config.copy.js"
+  },
+  "bin": {
+    "encrypt": "./encrypt.js",
+    "decrypt": "./decrypt.js"
+  }
+}
