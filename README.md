@@ -1,7 +1,7 @@
 config-leaf
 ===========
 
-Hide your sensitive node.js bits in plain sight.
+Hide your sensitive node.js bits in plain sight. Based on [John Resig](https://github.com/jeresig)'s post, [Keeping Passwords in Source Control](http://ejohn.org/blog/keeping-passwords-in-source-control/).
 
 Installation
 ------------
