@@ -3,6 +3,8 @@ config-leaf
 
 [![Build Status](https://travis-ci.org/jed/config-leaf.png?branch=master)](https://travis-ci.org/jed/config-leaf)
 
+(↑ this is working for me locally, but the tests fail... WHY? ↑)
+
 config-leaf helps you hide your sensitive node.js bits in plain sight. It was based on [John Resig](https://github.com/jeresig)'s post, [Keeping Passwords in Source Control](http://ejohn.org/blog/keeping-passwords-in-source-control/).
 
 The idea is that the configuration of deployed apps can be managed in version control for transparency and ease of rollback. But, since configuration often contains sensitive information like passwords, it shouldn't be kept in plaintext. This is where config-leaf comes in, by letting you encrypt your config in development, check it in, and then decrypt it in production or other dev environments.
@@ -30,7 +32,6 @@ Finally, edit your `package.json` to add the `encrypt` and `decrypt` scripts, su
     ...
     "encrypt": "encrypt config.json config.json.cast5",
     "decrypt": "decrypt config.json.cast5 config.json"
-    ...
   }
 }
 ```
