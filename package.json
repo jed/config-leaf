@@ -16,8 +16,8 @@
   },
   "scripts": {
     "test": "sh test.sh",
-    "encrypt": "encrypt config.js config.js.cast5",
-    "decrypt": "decrypt config.js.cast5 config.copy.js"
+    "encrypt": "encrypt config.json config.json.cast5",
+    "decrypt": "decrypt config.json.cast5 config.copy.json"
   },
   "bin": {
     "encrypt": "./encrypt.js",
