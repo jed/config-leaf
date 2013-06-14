@@ -13,12 +13,10 @@ module.exports = function(fn) {
   })
 
   rl.question("Enter the config password:\n", function(password) {
-    rl.close()
-
     from = fs.createReadStream(from)
     to   = fs.createWriteStream(to)
     fn   = fn("cast5-cbc", password)
 
-    from.pipe(fn).pipe(to)
+    from.pipe(fn).pipe(to).on("end", rl.close)
   })
 }
