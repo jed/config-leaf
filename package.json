@@ -22,5 +22,8 @@
   "bin": {
     "encrypt": "./encrypt.js",
     "decrypt": "./decrypt.js"
+  },
+  "engines": {
+    "node" : "0.10.x"
   }
 }
