@@ -17,6 +17,7 @@ module.exports = function(fn) {
     to   = fs.createWriteStream(to)
     fn   = fn("cast5-cbc", password)
 
-    from.pipe(fn).pipe(to).on("end", rl.close)
+    from.pipe(fn).pipe(to)
+    from.on("end", rl.close.bind(rl))
   })
 }
