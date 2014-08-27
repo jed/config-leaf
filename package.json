@@ -1,6 +1,6 @@
 {
   "name": "config-leaf",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Hide your sensitive node.js bits in plain sight.",
   "main": "index.js",
   "repository": {
