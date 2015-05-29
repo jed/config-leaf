@@ -1,6 +1,6 @@
 {
   "name": "config-leaf",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Hide your sensitive node.js bits in plain sight.",
   "main": "index.js",
   "repository": {
@@ -15,15 +15,18 @@
     "url": "https://github.com/jed/config-leaf/issues"
   },
   "scripts": {
-    "test": "sh test.sh",
-    "encrypt": "encrypt config.json config.json.cast5",
-    "decrypt": "decrypt config.json.cast5 config.copy.json"
+    "test": "./bin/test",
+    "encrypt": "encrypt test/config.json test/config.json.cast5",
+    "decrypt": "decrypt test/config.json.cast5 test/config.copy.json"
   },
   "bin": {
-    "encrypt": "./encrypt.js",
-    "decrypt": "./decrypt.js"
+    "encrypt": "./lib/encrypt.js",
+    "decrypt": "./lib/decrypt.js"
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "inquirer": "^0.8.5"
   }
 }
