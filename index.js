@@ -1,23 +1,27 @@
-var crypto   = require("crypto")
-var fs       = require("fs")
-var readline = require("readline")
-var path     = require("path")
+/**
+ * @fileoverview Encrypt or decrypt the given file after prompting the user for
+ * his or her password.
+ * @since 0.2.0
+ */
 
-module.exports = function(fn) {
-  var from = path.join(process.cwd(), process.argv[2])
-  var to   = path.join(process.cwd(), process.argv[3])
+var crypto = require('crypto');
+var fs = require('fs');
+var inquirer = require('inquirer');
+var path = require('path');
 
-  var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  })
+module.exports = function (fn) {
+  var sourcePath = path.join(process.cwd(), process.argv[2]);
+  var destPath = path.join(process.cwd(), process.argv[3]);
 
-  rl.question("Enter the config password:\n", function(password) {
-    from = fs.createReadStream(from)
-    to   = fs.createWriteStream(to)
-    fn   = fn("cast5-cbc", password)
+  inquirer.prompt([{
+    type: 'password',
+    message: 'Enter the config password',
+    name: 'password'
+  }], function (answers) {
+    var sourceStream = fs.createReadStream(sourcePath);
+    var destStream = fs.createWriteStream(destPath);
+    var cipher = fn('cast5-cbc', answers.password);
 
-    from.pipe(fn).pipe(to)
-    from.on("end", rl.close.bind(rl))
-  })
-}
+    sourceStream.pipe(cipher).pipe(destStream);
+  });
+};
