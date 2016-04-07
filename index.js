@@ -36,7 +36,7 @@ module.exports = function(fn) {
     });
   }
   
-  input("Enter the config password:\n", function(password) {
+  input("Enter the config password ("+path.basename(to)+"):\n", function(password) {
     from = fs.createReadStream(from)
     to   = fs.createWriteStream(to)
     fn   = fn("cast5-cbc", password)
