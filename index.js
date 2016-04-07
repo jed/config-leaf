@@ -42,6 +42,10 @@ module.exports = function(fn) {
     fn   = fn("cast5-cbc", password)
 
     from.pipe(fn).pipe(to)
-    from.on("end", rl.close.bind(rl))
+    from.on("end", function () {
+      rl.write("done\n");
+      rl.close.bind(rl);
+    });
+    
   })
 }
