@@ -36,6 +36,20 @@ Finally, edit your `package.json` to add the `encrypt` and `decrypt` scripts, su
 
 Here, the `encrypt` script will encrypt the `config.json` file as `config.json.cast5`, and the `decrypt` script will decrypt the `config.json.cast5` file as `config.json`. In both cases, the name of the encrypted file can be chosen arbitrarily.
 
+You can choose to bypass manual password entry by supplying the name of an environmental variable you have set to store a password for you using the `--PW` flag:
+```json
+{
+  "name": "my-project",
+  "version": "0.0.1",
+  "scripts": {
+    ...
+    "encrypt": "encrypt config.json config.json.cast5 --PW=ENV_VAR_PW_KEY",
+    "decrypt": "decrypt config.json.cast5 config.json --PW=ENV_VAR_PW_KEY"
+  }
+}
+```
+
+
 Usage
 -----
 

@@ -17,7 +17,12 @@
   "scripts": {
     "test": "sh test.sh",
     "encrypt": "encrypt config.json config.json.cast5",
-    "decrypt": "decrypt config.json.cast5 config.copy.json"
+    "decrypt": "decrypt config.json.cast5 config.copy.json",
+    "encrypt_env": "encrypt config.json config.json.cast5 --PW=ENV_PW",
+    "decrypt_env": "decrypt config.json.cast5 config.copy.json --PW=ENV_PW"
+  },
+  "dependencies": {
+    "minimist":"^1.2.0"
   },
   "bin": {
     "encrypt": "./encrypt.js",
