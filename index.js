@@ -15,14 +15,12 @@ module.exports = function(fn) {
 
 	var input = function(query, callback) {
 		if (argv.PW){
-      if(process.env[argv.PW]){
-        callback(process.env[argv.PW]);
-        process.exit();
-      }else{
-        console.error(new Error("Environmental variable \""+argv.PW+"\" has not been set."));
-        process.exit(1)
-      }
-      
+			if(process.env[argv.PW]){
+				callback(process.env[argv.PW], true);
+			}else{
+				console.error(new Error("Environmental variable \""+argv.PW+"\" has not been set."));
+				process.exit(1)
+	  		}
 		}else{
 			var stdin = process.openStdin(),
 					i = 0;
@@ -48,16 +46,19 @@ module.exports = function(fn) {
 		}
 	}
 	
-	input("Enter the config password ("+path.basename(to)+"):\n", function(password) {
-    from = fs.createReadStream(from)
-    to   = fs.createWriteStream(to)
+	input("Enter the config password ("+path.basename(to)+"):\n", function(password, env_var_bool) {
+		from = fs.createReadStream(from)
+		to   = fs.createWriteStream(to)
 		fn	 = fn("cast5-cbc", password)
 
 		from.pipe(fn).pipe(to)
 		from.on("end", function () {
 			rl.write("done\n");
-			rl.close.bind(rl);
+			if(!env_var_bool){
+				rl.close.bind(rl);
+			}else{
+				process.exit();
+			}
 		});
-		
 	})
 }
