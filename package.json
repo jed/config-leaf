@@ -27,6 +27,6 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "readline-sync": "^1.4.4"
+    "prompt": "^1.0.0"
   }
 }
