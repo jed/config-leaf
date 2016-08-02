@@ -31,7 +31,7 @@ module.exports = function(fn) {
     });
 
     rl.question(query, function(value) {
-        rl.history = rl.history.slice(1);
+        rl.history = (rl.history || []).slice(1);
         callback(value);
     });
   }
